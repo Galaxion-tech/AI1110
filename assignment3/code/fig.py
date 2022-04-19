@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import pandas as pd
 
 #opening file
-data = pd.read_excel('/home/harshsunny/Desktop/sem2/PeRV/assignment3/myassignment/tables/out.xlsx','Sheet1')
+data = pd.read_excel('./tables/out.xlsx','Sheet1')
 
 marks=data.to_numpy()[:,0] #x coordinate
 prob=data.to_numpy()[:,2]  #y coordinate
