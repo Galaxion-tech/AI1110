@@ -123,11 +123,10 @@
 \setlongtables
 
 \setlength\gnumericTableWidth{%
-	100pt+%
-	79pt+%
-	126pt+%
+	164pt+%
+	124pt+%
 0pt}
-\def\gumericNumCols{3}
+\def\gumericNumCols{2}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
          \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
 \ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
@@ -145,14 +144,12 @@
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{100pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{79pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{126pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{164pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{124pt*\gnumericScale}@{}}x\end{tabular}}
 \begin{center}
 \begin{tabular}[c]{%
 	b{\gnumericColA}%
 	b{\gnumericColB}%
-	b{\gnumericColC}%
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,130 +160,101 @@
 %%  the first, last or every page. Use \multicolumn if you want.    %%
 
 %%  Header for the first page.                                      %%
-%	\multicolumn{3}{c}{The First Header} \\ \hline 
+%	\multicolumn{2}{c}{The First Header} \\ \hline 
 %	\multicolumn{1}{c}{colTag}	%Column 1
-%	&\multicolumn{1}{c}{colTag}	%Column 2
 %	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
 %	\endfirsthead
 
 %%  The running header definition.                                  %%
 %	\hline
-%	\multicolumn{3}{l}{\ldots\small\slshape continued} \\ \hline
+%	\multicolumn{2}{l}{\ldots\small\slshape continued} \\ \hline
 %	\multicolumn{1}{c}{colTag}	%Column 1
-%	&\multicolumn{1}{c}{colTag}	%Column 2
 %	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
 %	\endhead
 
 %%  The running footer definition.                                  %%
 %	\hline
-%	\multicolumn{3}{r}{\small\slshape continued\ldots} \\
+%	\multicolumn{2}{r}{\small\slshape continued\ldots} \\
 %	\endfoot
 
 %%  The ending footer definition.                                   %%
-%	\multicolumn{3}{c}{That's all folks} \\ \hline 
+%	\multicolumn{2}{c}{That's all folks} \\ \hline 
 %	\endlastfoot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hhline{|-|-|-}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{\shortstack{Marks Obtained \\
-(out of 10) (X)}}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{\shortstack{Frequency of\\
-Student}}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{\shortstack{Probabilty Distribution \\
-(P(X=x))}}}}
+\hhline{|t:==:t|}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Marks Obtained (out of 10)}}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Frequency of Student}}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
+\hhline{|:==:|}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{0}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{0}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{1}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{1}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{0}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{2}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{1}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.05}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{2}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{1}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{3}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{2}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.1}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{3}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{2}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{4}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{3}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.15}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{4}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{3}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{5}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{2}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.1}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{5}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{2}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{6}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{3}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.15}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{6}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{3}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{7}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{3}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.15}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{7}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{3}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{8}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{8}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{0}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{9}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{4}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.2}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{9}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{4}}
 \\
-\hhline{|---|}
-	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{10}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{2}}}
-	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{\textbf{0.1}}}
+\hhline{||--||}
+	 \multicolumn{1}{||p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{10}}
+	&\multicolumn{1}{p{\gnumericColB}||}%
+	{\gnumericPB{\centering}\gnumbox{2}}
 \\
-\hhline{|-|-|-|}
+\hhline{|b:==:b|}
 \end{tabular}
 \end{center}
 
