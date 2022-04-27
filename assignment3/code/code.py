@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 #input data
-data = pd.read_excel('../tables/mode.xlsx','Sheet1')
+data = pd.read_excel('./tables/mode.xlsx','Sheet1')
 mydata =np.array(data)
 smple_spce=20
 
@@ -25,5 +25,5 @@ print(mode)
 
 #writing in .xlsx
 write=pd.DataFrame({"Marks Obtained \n(out of 10)(X)":marks,"Frequency of\nStudent":freq_stdnt})
-write.to_excel('../tables/out.xlsx',index=False)
+write.to_excel('./tables/out.xlsx',index=False)
 
