@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 #input data
-data = pd.read_excel('./tables/mode.xlsx','Sheet1')
+data = pd.read_excel('/home/harshsunny/Desktop/sem2/PeRV/assignment3/assignment3/tables/mode.xlsx','Sheet1')
 mydata =np.array(data)
 smple_spce=20
 
@@ -16,9 +16,6 @@ freq_stdnt=np.asarray(freq_stdnt[0])
 #removing mark[11]
 marks.pop()
 
-#probablity distribution of data
-prob=freq_stdnt/smple_spce
-
 #getting which is recieved by max number of student
 mode= np.where(freq_stdnt==np.amax(freq_stdnt))
 mode= np.asarray(mode)[0][0]
@@ -27,6 +24,6 @@ mode= np.asarray(mode)[0][0]
 print(mode)
 
 #writing in .xlsx
-write=pd.DataFrame({"Marks Obtained \n(out of 10)(X)":marks,"Frequency of\nStudent":freq_stdnt,"Probabilty Distribution \n(P(X=x))":prob})
-write.to_excel('tables/out.xlsx',index=False)
+write=pd.DataFrame({"Marks Obtained \n(out of 10)(X)":marks,"Frequency of\nStudent":freq_stdnt})
+write.to_excel('/home/harshsunny/Desktop/sem2/PeRV/assignment3/assignment3/tables/out.xlsx',index=False)
 
