@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
+from matplotlib import pyplot as plt
 
+#creating the table
 #input data
 data = pd.read_excel('./tables/mode.xlsx','Sheet1')
 mydata =np.array(data)
@@ -27,3 +29,29 @@ print(mode)
 write=pd.DataFrame({"Marks Obtained \n(out of 10)(X)":marks,"Frequency of\nStudent":freq_stdnt})
 write.to_excel('./tables/out.xlsx',index=False)
 
+#creating the figure
+#opening file
+data = pd.read_excel('./tables/out.xlsx','Sheet1')
+
+marks=data.to_numpy()[:,0] #x coordinate
+freq=data.to_numpy()[:,1]  #y coordinate
+
+#plotting
+plt.plot(marks,freq,marker='o', label="Graphical Representation")
+
+plt.ylim(0,5)
+plt.xlim(0,10)
+
+#labelling 
+plt.xlabel("Marks")
+plt.ylabel("Frequency of Students")
+
+plt.legend(loc="best")
+
+plt.grid()
+
+#saving figure
+plt.savefig("./figures/fig.png")
+
+#displaying
+plt.show()
