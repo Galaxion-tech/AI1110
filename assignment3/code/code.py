@@ -9,7 +9,7 @@ mydata =np.array(data)
 smple_spce=20
 
 #possible number of marks (out of 10)
-marks=[i for i in range(12)]
+marks=np.arange(1,12)
 
 #number of student getting marks
 freq_stdnt=np.histogram(mydata,marks)
