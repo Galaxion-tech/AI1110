@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+\usepackage{amsmath}
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{ASSIGNMENT 5} 
+\author{HARSH GOYAL (CS21BTECH11020)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+\newcommand{\mybinom}[2]{\Bigl(\begin{array}{@{}c@{}}#1\\#2\end{array}\Bigr)}
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem Statement}
+\begin{frame}{Problem Statement}
+\begin{block}{Class $12^{th}$ Probability Example 31}
+If a fair coin is tossed 10 times, find the probability of
+    \begin{enumerate}
+        \item exactly six heads
+        \item at least six heads
+        \item at most six heads
+    \end{enumerate}
+\end{block}
+
+\end{frame}
+
+
+% Blocks frame
+\section{Soltuion}
+\begin{frame}{Solution}
+    \begin{alertblock}{Binomial Distribution}
+        The Binomial Distribution Formula for any Random Variable X is 
+        \begin{equation}
+            P(X = x) = \mybinom{n}{x}p^x(1-p)^{n-x} \label{eq:1}
+        \end{equation}
+        where,\\
+        $n = $ Number of Experiments (Trails) \\
+        $p = $ Probability of Success \\
+        $x = 0,1,2,\ldots,n$
+    \end{alertblock}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{block}{Part 1}
+        Let the Random Variable X be the number of heads in coin toss.\\
+        we have,
+        \begin{align}
+            X \in \{0,1,2,3,4,5,6,7,8,9,10\}
+        \end{align}
+        \begin{align}
+            \text{(Number of Trails) } n &= 10\\
+            \text{(Probability of getting head in one toss) } p &= \frac{1}{2}
+        \end{align}
+        Using PMF from equation \eqref{eq:1}, we get
+        \begin{align}
+            P(X=6) = \mybinom{10}{6}\times p^6\times (1-p)^4 = 210\times \frac{1}{2}^{10}= \frac{105}{512}
+        \end{align}
+    \end{block}
+\end{frame} 
+\begin{frame}{Soltuion}
+    \begin{block}{Part 2}
+        \begin{align}
+            P(X \geq 6) &= P(X = 6)+P(X = 7)+P(X = 8)+P(X = 9)+P(X =10)\\
+            P(X \geq 6) &= \mybinom{10}{6} p^6(1-p)^4 + \mybinom{10}{7}p^7(1-p)^3 + \mybinom{10}{8}p^8(1-p)^2 \\ 
+            & +\mybinom{10}{9}p^9(1-p)+\mybinom{10}{10}p^{10}\\
+            P(X \geq 6) &= 210\times \frac{1}{2}^{10}+120\times \frac{1}{2}^{10}+45\times \frac{1}{2}^{10}+10\times \frac{1}{2}^{10}+1\times \frac{1}{2}^{10}\\
+            P(X \geq 6) &=\frac{193}{512}
+        \end{align}
+    \end{block}  
+\end{frame}
+\begin{frame}{Solution}
+    \begin{block}{Part 3}
+        \begin{align}
+            P(X \leq 6) &= P(X=0)+P(X=1)+P(X=2)+P(X=3)\\ &+P(X=4)+P(X=5)+P(X=6) \\
+            P(X \leq 6) &= \mybinom{10}{0}p^0(1-p)^{10}+\mybinom{10}{1}p(1-p)^9+\mybinom{10}{2}p^2(1-p)^8 \\ &+\mybinom{10}{3}p^3(1-p)^7+\mybinom{10}{4}p^4(1-p)^6+\mybinom{10}{5}p^5(1-p)^5\\ &+\mybinom{10}{6}p^6(1-p)^4\\
+            P(X \leq 6) &= 1\times\frac{1}{2}^{10}+10\times\frac{1}{2}^{10}+45\times\frac{1}{2}^{10}+120\times\frac{1}{2}^{10}\\ &+210\times\frac{1}{2}^{10}+252\times\frac{1}{2}^{10}+210\times\frac{1}{2}^{10}= \frac{848}{1024} = \frac{53}{64}
+        \end{align}
+    \end{block}
+\end{frame}
+
+\end{document}
