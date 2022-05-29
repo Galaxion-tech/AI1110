@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 7} 
+\author{Harsh Goyal (CS21BTECH11020)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem Statement}
+\begin{frame}{Problem Statement}
+    \begin{block}{Papoulis Ch-5 Ex 5.29}
+        Using (5-86), find $E(x^3)$ if $\eta_x =10 $ and $ \sigma_x = 2$
+    \end{block}
+    \begin{alertblock}{Equation: 5-86}
+       \begin{equation}
+        E(g(x)) \approx g(\eta) + g^{''}(\eta)\frac{\sigma^2}{2} \label{eq:1}
+       \end{equation}
+       where, \\
+       $\eta = $ Mean of the $x$ \\
+       $\sigma = $ Standard Deviation in $x$
+    \end{alertblock}
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+    \begin{block}{}
+        Let $g(x)$ be a function such that $g(x) = x^3$,
+        we have \\
+        \begin{align}
+            \eta_x &= 10 \\
+            \sigma_x &= 2 \\
+            g^{''}(x) &= 6x 
+        \end{align}
+        Using Equation \eqref{eq:1}, we got
+        \begin{equation}
+            E(x^3) \approx \eta_x^3 + 6 \eta_x  \frac{\sigma_x^2}{2} = 10^3+6\times 10 \times \frac{4}{2} = 1120
+        \end{equation}
+        
+    \end{block}
+\end{frame} 
+
+\end{document}
