@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 8} 
+\author{Harsh Goyal (CS21BTECH11020)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+\let\vec\textbf
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem Statement}
+\begin{frame}{Problem Statement}
+    \begin{block}{Papoulis Ch-6 Ex 6.34}
+    \vec{x} and \vec{y} are independent and identically distributed normal random variables with zero mean and variance $\sigma^2$. Define
+    \begin{equation}
+        \vec{u}=\frac{\vec{x}^2-\vec{y}^2}{\sqrt{\vec{x}^2+\vec{y}^2}}             \hspace{12pt}            \vec{v} = \frac{2\vec{x}\vec{y}}{\sqrt{\vec{x}^2+\vec{y}^2}}
+    \end{equation}
+    (a) Find the joint p.d.f $f_{\vec{u}\vec{v}}(u,v)$ of the random variables \vec{u} and \vec{v}.\\
+    (b) Show that \vec{u} and \vec{v} are independent normal random variables.\\
+    (c) Show that $\frac{[(\vec{x}-\vec{y})^2-2\vec{y}^2]}{\sqrt{\vec{x}^2+\vec{y}^2}}$ is also a normal random variables.\\
+
+    \bigskip
+
+    Thus nonlinear function of normal random variables can lead to normal random variables!(This result is due to Shepp.)
+    \end{block}
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+    \begin{alertblock}{Joint Density}
+        Let $g(x,y)$ and $h(x,y)$ be two continuous and differentiable function such that
+            \begin{equation}
+                g({x},{y})y = {z} \hspace*{12pt} h({x},{y}) = {w} \label{eq:2}
+            \end{equation}
+        For a given point ({z},{w}), \eqref{eq:2} can have many solutions. Let us say $(x_1,y_1),(x_2,y_2),(x_3,y_3),\ldots,(x_n,y_n)$ represent these multiple solutions such that
+        \begin{equation}
+            g({x}_i,{y}_i) = {z} \hspace*{12pt} h({x}_i,{y}_i) = {w} \label{eq:3}
+        \end{equation}
+        Finally,
+        \begin{equation}
+            f_{zw}(z,w) = \sum_i \frac{1}{|J(x_i,y_i)|}f_{xy}(x_i,y_i) \label{eq:4}
+        \end{equation}
+        where the determinant $J(x_i,y_i)$ represents the Jacobian of orignal transformation given by:
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Solution}
+    \begin{alertblock}{}
+        \begin{equation}
+            J(x_i,y_i)= \begin{vmatrix}
+                \frac{\delta g}{\delta x} & \frac{\delta g}{\delta y} \\ \frac{\delta h}{\delta x} & \frac{\delta h}{\delta y}
+            \end{vmatrix}_{x=x_i,y=y_i}
+        \end{equation}
+    \end{alertblock}
+    \begin{alertblock}{Joint Density Function}
+        If $x$ and $y$ are zero mean independent random variables, then
+        \begin{equation}
+            f_{x,y}(x,y) = \frac{1}{2\pi \sigma^2} e^{\frac{-(x^2+y^2)}{2\sigma^2}}
+        \end{equation}
+        Let $r=\sqrt{x^2+y^2}$ and $\theta = \tan ^{-1}(y/x)$ where $\theta$ vary in the interval ($-\pi,\pi$).
+        \begin{equation}
+            f_{r,\theta}(r,\theta) = rf_{xy}(x,y) = \frac{r}{2\pi \sigma^2}e^{-r^2/2\sigma^2}=f_r(r)f_\theta(\theta) \hspace*{12pt} 0 < r < \infty \hspace*{12pt} |\theta| < \pi \label{eq:7}
+        \end{equation}
+        Note: $r$ and $\theta$ are independent random variables
+    \end{alertblock}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{block}{}
+        (a) Let,
+        \begin{equation}
+            r=\sqrt{x^2+y^2} \hspace{12pt} \theta = \tan^{-1}(y/x)
+        \end{equation}
+        From \eqref{eq:7}, we have $r$ and $\theta$ as independent random variables. In term of $r$ and $\theta$ we get,
+        $x=r\cos\theta$ and $y=r\sin\theta$ and hence we obtain
+        \begin{align}
+            u&=\frac{x^2-y^2}{\sqrt{x^2+y^2}} = r\cos 2\theta =g(r,\theta)\\
+            v&=\frac{2xy}{\sqrt{x^2-y^2}} = r\sin 2\theta =h(r,\theta)
+        \end{align}
+        This gives Jacobian $J(r,\theta)$ (independent of $\theta$) as
+        \begin{equation}
+            J(r,\theta)= \begin{vmatrix}
+                \frac{\delta g}{\delta r} & \frac{\delta g}{\delta \theta} \\ \frac{\delta h}{\delta r} & \frac{\delta h}{\delta \theta}
+            \end{vmatrix} = \begin{vmatrix}
+                \cos 2\theta & -2r\sin 2\theta \\ \sin 2\theta & 2r\cos 2\theta
+            \end{vmatrix} = 2r = 2\sqrt{u^2+v^2}
+        \end{equation}
+    \end{block}
+\end{frame} 
+\begin{frame}{Solution}
+    \begin{block}{}
+        Since $x$ and $y$ are independent and identically distributed normal random variables. Therefor
+        There will be two soution $(x_1,y_1)$and $(x_2,y_2)$ or $(r_1,\theta_1)$ and $(r_2,\theta_2)$ of the equation $(u,v) = (g(r,\theta),h(r,\theta))$ for some $u$ and $v$\\
+        \bigskip
+        And, Since $x$ and $y$ are i.i.d random variables, there p.d.f are same at these two solution, Therefore
+        \begin{equation}
+            r_1=r_2 \hspace*{12pt} 2\theta_2=\pi + 2\theta_1 \implies f_{r\theta}(r_1,\theta_1) = f_{r\theta}(r_2,\theta_2)
+        \end{equation}
+        Now, By \eqref{eq:4} and \eqref{eq:7}, we get
+        \begin{align}
+            f_{uv}(u,v) &= \frac{f_{r\theta}(r_1,\theta_1)}{J(r_1,\theta_1)}+\frac{f_{r\theta}(r_2,\theta_2)}{J(r_2,\theta_2)}f=\frac{2}{J(r,\theta)}f_{r\theta}(r_1,\theta_1) \\
+            &= \frac{2}{2r}\frac{r}{2\pi\sigma^2}e^{-r^2/2\sigma^2}= \frac{1}{2\pi\sigma^2}e^{-(u^2+v^2)/2\sigma^2} \label{eq:14}
+        \end{align}
+    \end{block}
+\end{frame}
+\begin{frame}{Soltuion}
+    \begin{block}{}
+        (b) From equation \eqref{eq:14}, we obtain
+        \begin{align}
+            f_{uv}(u,v) &= \frac{1}{2\pi\sigma^2}e^{-(u^2+v^2)/2\sigma^2}\\
+            &=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-u^2/2\sigma^2}\frac{1}{\sqrt{2\pi\sigma^2}}e^{-v^2/2\sigma^2}\\
+            &=f_u(u)f_v(v)
+        \end{align}
+        Thus, $u$ and $v$ are independent normal random variables.
+    \end{block}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{block}{}
+        (c) Let $z$ be a random varaible such that
+        \begin{align}
+            z&=\frac{[({x}-{y})^2-2{y}^2]}{\sqrt{{x}^2+{y}^2}}= \frac{[({x}^2-{y}^2)-2{y}{x}]}{\sqrt{{x}^2+{y}^2}} \\
+            &= u-v \sim N(0,2\sigma^2)
+        \end{align}
+        Thus, z is a normal random variable.
+    \end{block}
+\end{frame}
+
+\end{document}

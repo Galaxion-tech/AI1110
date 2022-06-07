@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+\usepackage{amsmath,amssymb}
+% Title page details: 
+\title{Assignment 9} 
+\author{Harsh Goyal (CS21BTECH11020)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+\let\vec\textbf
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem Statement}
+\begin{frame}{Problem Statement}
+
+    \begin{block}{Papoulis Chapter 7 Exercise 7.29}
+    Using the central limit theorem. show that for large n:
+        \begin{equation}
+            \frac{c^n}{(n-1)!}x^{n-1}e^{-cx} \approx \frac{c}{\sqrt{2\pi n}}e^{-(cx-n)^2/2n}
+        \end{equation}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Solution}
+    \begin{alertblock}{Erlang Density Function}
+        For $N=0,1,2,3,\ldots$  and constant $a>0$
+        \begin{align}
+            f_X(x) &= \frac{a^N}{(N-1)!}a^{N-1}e^{-ax}\\
+            \bar{X} &=\frac{N}{a} \hspace*{17pt} \sigma^2 =\frac{N}{a^2}\\
+            \Phi_X(\omega) &= \left(\frac{a}{a-j\omega}\right)^N
+        \end{align}
+    \end{alertblock}
+    \begin{alertblock}{Convolution theorem of Fourier transform}
+        It states that Convolution of two function in real space is the same as the product of their respective Fourier transforms in Fourier space.
+        \begin{equation}
+            f(r)*g(r) \Leftrightarrow F(k)G(k)
+        \end{equation}
+    \end{alertblock}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{alertblock}{Characteristics function and Normality}
+        The characteristic function of a random vector is by definition the function:
+        \begin{equation}
+            \Phi(\Omega) = E(e^{j\Omega \vec{X}'}) = E(e^{j(\omega_1x_1+\omega_2x_2+\ldots+\omega_n x_n)}) = \Phi(j\Omega)
+        \end{equation}
+        where,
+        \begin{equation}
+            \vec{X} = [x_1,\dots,x_n] \hspace*{12pt} \Omega = [\omega_1,\ldots,\omega_n]
+        \end{equation}
+        Let $z=x_1+x_2+\ldots+x_n$ be a random variable\\
+        Now, If the random variables $x_i$ are independent with respective densities $f_i(x_i)$, then
+        \begin{equation}
+            E(e^{j(\omega_1x_1+\omega_2x_2+\ldots+\omega_n x_n)}) = E(e^{j\omega_1x_1})\ldots E(e^{j\omega_nx_n})
+        \end{equation}
+    \end{alertblock}
+\end{frame}
+    \begin{frame}{Solution}
+        \begin{alertblock}{}
+        Hence,
+        \begin{equation}
+            \Phi_z(\omega) = E(e^{j(\omega_1x_1+\omega_2x_2+\ldots+\omega_n x_n)}) = \Phi_1(\omega)\ldots \Phi_n(\omega)
+        \end{equation}
+        where $\Phi_i(\omega)$ is the chacteristic function of $x_i$\\
+        On Applying the convolution theorem for Fourier transform, we obtain
+        \begin{equation}
+            f_z(z) = f_1(z)*\ldots*f_n(z)
+        \end{equation}
+    \end{alertblock}
+    \begin{alertblock}{Central Limit Theorem}
+        Given $n$ independent random variable $x_i$, we form their sum
+        \begin{equation}
+            x=x_1+\ldots+x_n
+        \end{equation}
+        This is a random variable with mean $\eta = \eta_1+\ldots+\eta_n$ and variance $\sigma^2=\sigma_1^2+\ldots+\sigma_n^2$
+    \end{alertblock}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{alertblock}{}
+        The Central Limit Theorem (CLT) states that under certain general conditions, the distribution $F(x)$ of $x$ approaches a normal distribution with the same mean and variance as $n$ increases.
+        \begin{equation}
+            F(x) \simeq G\left(\frac{x-\eta}{\sigma}\right)
+        \end{equation}
+        Futhermore, if the random variables $x_i$ are of continous type, the density $f(x)$ of $x$ approaches a normal density.
+        \begin{equation}
+            f(x) \simeq \frac{1}{\sigma\sqrt{2\pi}}e^{-(x-\eta)^2/2\sigma^2}
+        \end{equation}
+    \end{alertblock}
+\end{frame}
+\begin{frame}{Soltuion}
+    \begin{block}{}
+        Let $x_1,\ldots,x_n$ be some i.i.d random variables with exponential density function $\lambda e^{-\lambda x}$ and characteristic function $\Phi_{x_i}(\omega)$. Consider a random variable $X = x_1+\ldots+x_n$.
+        \begin{equation}
+            \Phi_{x_i}(\omega) = \frac{a}{a-j\omega}
+        \end{equation}
+        Since from equation (9), we have,
+        \begin{equation}
+            \Phi_X(\omega) = \Phi_{x_1}(\omega)\ldots \Phi_{x_n}(\omega) = \left(\frac{a}{a-j\omega}\right)^n
+        \end{equation}
+        On applying Convolution Theorem, we obtain
+        \begin{equation}
+            f_X(x) = \frac{a^n}{(n-1)!}a^{n-1}e^{-ax} \hspace*{12pt} \textbf{(Erlang Density Function)}
+        \end{equation}
+    \end{block}
+\end{frame}
+\begin{frame}{Solution}
+    \begin{block}{}
+        On Applying Central Limit Theorem on random variable $X$ (For some Large Value of $n$). we get
+        \begin{equation}
+            f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-(x-\eta)^2/2\sigma^2}
+        \end{equation}
+        So On Comparing equation (16) and (17), we conclude:\\
+        Erlang Density Function approaches Normal Density Curve with same mean and same variance at large value of $n$.
+        \begin{equation}
+           \frac{c^n}{(n-1)!}c^{n-1}e^{-cx} \approx \frac{1}{\sqrt{2\pi \frac{n}{c^2}}}e^{(x-\frac{n}{c})^2/2\frac{n}{c^2}} =\frac{c}{\sqrt{2\pi n}}e^{-(cx-n)^2/2n} 
+        \end{equation}
+        Hence Shown.
+    \end{block}
+\end{frame}
+\end{document}
