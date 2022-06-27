@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 10} 
+\author{CS21BTECH11020 (Harsh Goyal)}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem Statement}
+\begin{frame}{Problem Statement}
+\begin{block}{Papoulis Ch-9 Ex-9.37 }
+The process $x(t)$ is normal with zero mean and $R_x(\tau)$ = $Ie^{-\alpha |\tau|}cos(\beta \tau)$. Show that if $y(t)$ =
+$x^2(t)$. then $C_y(\tau)$ = $I^2e^{-2 \alpha |\tau|}(1 + cos(2\beta\tau))$. Find $S_y(\omega)$.
+    
+\end{block}
+
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+ \begin{block}{}
+ We Know,
+ \begin{equation}
+     E\{x^2(t+\tau)x^2(t)\} = E\{x^2(t+\tau)\}E\{x^2(t)\} + 2E^2\{x^2(t+\tau)x^2(t)\}
+ \end{equation}
+ Hence,
+ \begin{equation}
+     R_y(\tau) = R_x^2(0)+2R_x^2(\tau) = I^2(1+e^{-2\alpha |\tau|}+e^{-2\alpha |\tau|}cos(2\beta \tau))
+ \end{equation}
+ \begin{equation}
+     S_y(\omega) = \left[ 2\pi\delta(\omega) + \frac{4\alpha}{4\alpha^2+\omega^2}+\frac{2\alpha}{4\alpha^2+(\omega-2\beta)^2}+ \frac{2\alpha}{4\alpha^2+(\omega+2\beta)^2} \right]
+ \end{equation}
+ Futhermore,
+ \begin{align}
+     n_y&= E{x^2(t)} = R_x(0) \\ C_y(\tau)&= 2R_x^2(\tau)
+ \end{align}
+ \end{block}
+\end{frame} 
+
+\end{document}
+
