@@ -1,7 +1,7 @@
-PWD /home/galaxion/Desktop/sem2/probability/assignment-probability_1
+PWD /home/galaxion/Desktop/sem2/probability/AI1110/ass_manual
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/galaxion/Desktop/sem2/probability/assignment-probability_1/main.tex
+INPUT /home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex
 OUTPUT main.log
 INPUT /usr/share/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
 INPUT /usr/share/texmf-dist/tex/latex/ieeetran/IEEEtran.cls

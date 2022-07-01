@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1656672374 "/home/galaxion/Desktop/sem2/probability/assignment-probability_1/main.tex" "main.pdf" "main" 1656672375
-  "/home/galaxion/Desktop/sem2/probability/assignment-probability_1/main.tex" 1656672372 13243 38327fbd35de8384d3cf6060d29b016a ""
+["pdflatex"] 1656675807 "/home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex" "main.pdf" "main" 1656675807
+  "/home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex" 1656675806 13543 884da4777e99911dc504a14d18e71a04 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1650183167 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -206,10 +206,10 @@
   "figs/gauss_pdf.pdf" 1656469816 15117 e6e7545efa836b9e56dd4ed1018a28c5 ""
   "figs/other_cdf.pdf" 1656475826 9798 171bb6e501d93f451cd123e24103fba5 ""
   "figs/uni_cdf.pdf" 1656477653 9873 bfe6d5729146d0a3956f393f8b929092 ""
-  "main.aux" 1656672375 1830 42359f5a8a6f243737eedc7c500c8ec7 "pdflatex"
-  "main.out" 1656672375 470 37c8481bc05726ed3dfbe08d8310ed84 "pdflatex"
-  "main.tex" 1656672372 13243 38327fbd35de8384d3cf6060d29b016a ""
-  "main.toc" 1656672375 232 46cd83fc09a4e27cd65b38837fddfe83 "pdflatex"
+  "main.aux" 1656675807 1830 42359f5a8a6f243737eedc7c500c8ec7 "pdflatex"
+  "main.out" 1656675807 470 37c8481bc05726ed3dfbe08d8310ed84 "pdflatex"
+  "main.tex" 1656675806 13543 884da4777e99911dc504a14d18e71a04 ""
+  "main.toc" 1656675807 232 46cd83fc09a4e27cd65b38837fddfe83 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

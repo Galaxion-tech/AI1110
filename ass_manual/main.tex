@@ -367,6 +367,7 @@ On running, we get
         &=\left. \frac{1}{\sqrt{2\pi}}(-e^{\frac{-x^2}{2}}) \right|_{x=-\infty}^{x=\infty}\\
         &=0
      \end{align}
+     Now, Knowing the fact $\int_{-\infty}^{\infty} P_x(x) = 1$ \\ Using Integration by Parts, we get,
      \begin{align}
         \text{Var}[X]&=E[X^2]-(E[X])^2 \\
         &=\int_{-\infty}^{\infty}x^2P_x(x)dx \\
@@ -418,6 +419,9 @@ CDF Graph is as follow
 
 \item Find a theoretical expression for $F_V (x)$.\\
 \solution 
+    Since $V=f(U) = -2\ln(1-U)$ is a monotonically incresing function in $(0,\infty)$. Therefore, It's Inverse exists:
+    \\ $U=f^{-1}(V) = 1-e^{-v/2}$\\
+    Hence By monotonicity of f(U), we get
     \begin{align}
         F_V(x) &= Pr(V<x)\\
         &= Pr(-2\ln(1-U) < x)\\
