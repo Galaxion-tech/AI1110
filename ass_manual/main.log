@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.27)  1 JUL 2022 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.27)  7 JUL 2022 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -820,7 +820,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
-<./figs/uni_cdf.pdf, id=23, 462.52798pt x 346.89601pt>
+<./figs/uni_cdf.pdf, id=28, 462.52798pt x 346.89601pt>
 File: ./figs/uni_cdf.pdf Graphic file (type pdf)
 <use ./figs/uni_cdf.pdf>
 Package pdftex.def Info: ./figs/uni_cdf.pdf  used on input line 167.
@@ -836,7 +836,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
@@ -847,65 +847,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 200--201
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.208         \begin{lstlisting}
-                                 <./figs/uni_cdf.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+l.208 
+       <./figs/uni_cdf.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
-<./figs/gau_cdf.pdf, id=85, 462.52798pt x 346.89601pt>
+<./figs/gau_cdf.pdf, id=102, 462.52798pt x 346.89601pt>
 File: ./figs/gau_cdf.pdf Graphic file (type pdf)
 <use ./figs/gau_cdf.pdf>
-Package pdftex.def Info: ./figs/gau_cdf.pdf  used on input line 288.
+Package pdftex.def Info: ./figs/gau_cdf.pdf  used on input line 305.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 288--289
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 305--306
 [][]
  []
 
-[2
-pdfTeX warning (ext4): destination with the same identifier (name{figure.7.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.304     \end{equation}
-                         <./figs/gau_cdf.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 321--323
 
  []
 
 <./figs/gauss_pdf.pdf, id=142, 462.52798pt x 346.89601pt>
 File: ./figs/gauss_pdf.pdf Graphic file (type pdf)
 <use ./figs/gauss_pdf.pdf>
-Package pdftex.def Info: ./figs/gauss_pdf.pdf  used on input line 322.
+Package pdftex.def Info: ./figs/gauss_pdf.pdf  used on input line 339.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 322--323
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 339--340
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
 [3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.386      \end{align}
+                      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.397 \end{lstlisting}
-                       <./figs/gauss_pdf.pdf>]
-<./figs/other_cdf.pdf, id=219, 462.52798pt x 346.89601pt>
+l.386      \end{align}
+                       <./figs/gau_cdf.pdf> <./figs/gauss_pdf.pdf>]
+<./figs/other_cdf.pdf, id=242, 462.52798pt x 346.89601pt>
 File: ./figs/other_cdf.pdf Graphic file (type pdf)
 <use ./figs/other_cdf.pdf>
-Package pdftex.def Info: ./figs/other_cdf.pdf  used on input line 416.
+Package pdftex.def Info: ./figs/other_cdf.pdf  used on input line 433.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 416--417
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 433--434
 [][]
  []
 
@@ -913,24 +916,84 @@ Overfull \hbox (25.51892pt too wide) in paragraph at lines 416--417
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.440 \end{document}
-                     <./figs/other_cdf.pdf>] (./main.aux)
+l.482     $
+            <./figs/other_cdf.pdf>]
+<./figs/4.2.pdf, id=323, 462.52798pt x 346.89601pt>
+File: ./figs/4.2.pdf Graphic file (type pdf)
+<use ./figs/4.2.pdf>
+Package pdftex.def Info: ./figs/4.2.pdf  used on input line 490.
+(pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
+
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 490--492
+[][]
+ []
+
+<./figs/4.3.pdf, id=325, 462.52798pt x 346.89601pt>
+File: ./figs/4.3.pdf Graphic file (type pdf)
+<use ./figs/4.3.pdf>
+Package pdftex.def Info: ./figs/4.3.pdf  used on input line 505.
+(pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
+
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 505--507
+[][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (12.94388pt too wide) detected at line 530
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--532
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--538
+
+ []
+
+[5 <./figs/4.2.pdf> <./figs/4.3.pdf>]
+<./figs/4.5.pdf, id=419, 462.52798pt x 346.89601pt>
+File: ./figs/4.5.pdf Graphic file (type pdf)
+<use ./figs/4.5.pdf>
+Package pdftex.def Info: ./figs/4.5.pdf  used on input line 573.
+(pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
+
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 573--575
+[][]
+ []
+
+<./figs/4.6.pdf, id=420, 462.52798pt x 346.89601pt>
+File: ./figs/4.6.pdf Graphic file (type pdf)
+<use ./figs/4.6.pdf>
+Package pdftex.def Info: ./figs/4.6.pdf  used on input line 578.
+(pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
+
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 578--580
+[][]
+ []
+
+[6 <./figs/4.5.pdf> <./figs/4.6.pdf>] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 37C8481BC05726ED3DFBE08D8310ED84;470.
+(rerunfilecheck)             Checksum: 49F88C2C091165F3CEC345805B07269E;639.
  ) 
 Here is how much of TeX's memory you used:
- 25245 strings out of 478238
- 457015 string characters out of 5850456
- 865323 words of memory out of 5000000
- 42930 multiletter control sequences out of 15000+600000
+ 25339 strings out of 478238
+ 458405 string characters out of 5850456
+ 840547 words of memory out of 5000000
+ 42967 multiletter control sequences out of 15000+600000
  504171 words of font info for 100 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 84i,15n,90p,481b,1942s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,15n,90p,481b,1905s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (4 pages, 172298 bytes).
+Output written on main.pdf (6 pages, 232361 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 104 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 340 compressed objects within 4 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

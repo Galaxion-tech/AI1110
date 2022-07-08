@@ -160,7 +160,7 @@ $ python3 cdf_plot.py
          F_U(x) = Pr(U \leq x)
 \end{equation}
 
-    \solution Graph of CDF is as follow:
+    Graph of CDF is as follow:
 
     \begin{figure}[H]
         \centering
@@ -174,28 +174,35 @@ $ python3 cdf_plot.py
     
     \begin{align}
     P_U(x) =  \begin{cases}
-        \frac{1}{b-a} & x \in (a,b) \\
+        1 & x \in (0,1) \\
         0 & otherwise
     \end{cases} 
     \end{align}
 
     on integrating for CDF we get,
-    
-    \begin{align}
+   \begin{equation}
+    F_U(x) = \int_{-\infty}^{x}P_U(t)dt
+   \end{equation} 
+
+   \begin{align}
     F_U(x) =  \begin{cases}
-        \frac{x-a}{b-a} & x \in (a,b) \\
-        0 & otherwise
+        \int_{-\infty}^{x}0 dx   & x \in (-\infty,0)\\
+        %\int_{-\infty}^0 0 dx + 
+        \int_{0}^x 1dx & x \in (0,1) \\
+        %\int_{-\infty}^0 0 dx +
+         \int_{0}^1 1dx & x \in (1,\infty)
+ %+ \int_{1}^{x} 0 dx  & x \in (1,\infty)
     \end{cases} 
     \end{align}
 
-    Here, we have a=0 and b=1, Hence,
-    
     \begin{align}
     F_U(x) =  \begin{cases}
-        x& x \in (0.1) \\
-        0 & otherwise
+        0 & x \in (-\infty,0)\\
+        x & x \in (0,1) \\
+        1 & x \in (1,\infty)
     \end{cases} 
-\end{align}
+    \end{align}
+
 
 \item Write a C program to find the mean and variance of U.\\
 
@@ -270,7 +277,17 @@ $ ./a.out
 
 \item Load gau.dat in python and plot the empirical CDF of $X$ using the samples in gau.dat. What properties does a CDF have?\\
 
-\solution 
+\solution
+    Formula Used to calculate $F_X(x)$ is:
+    \begin{align}
+        F(x)&=1-Q(x)\\
+            &=1-\frac{1}{2}erfc(\frac{x}{\sqrt{2}}) 
+    \end{align}
+    where,
+    \begin{align}
+        erfc(x)=1-erf(x) = 1-\frac{2}{\sqrt{\pi}}\int_0^z e^{-t^2}dt
+    \end{align}
+    Using $mpmath.erfc()$ function to calculate $erfc()$ in python code.
     The required python file can be downloaded using
 
     \begin{lstlisting}
@@ -437,4 +454,129 @@ CDF Graph is as follow
     \end{align}
 \end{enumerate}
 
+\section{Triangular Distribution }
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+    \numberwithin{equation}{enumi}
+    \numberwithin{figure}{enumi}
+    \numberwithin{table}{enumi}
+    
+    \item Generate 
+    \begin{align}
+        T=U_1+U_2
+    \end{align} 
+    \solution Download the files:
+    \begin{lstlisting}
+        $ wget
+        $ wget
+    \end{lstlisting}
+    and compile and execute the C program using
+    \begin{lstlisting}
+        $ gcc 4.1.c -lm -Wall -g
+        $ ./a.out
+    \end{lstlisting}
+    
+    \item Find the CDF of $T$.
+    \solution 
+    The following code plots \ref{fig 4.2}
+    \begin{lstlisting}
+    $    
+    \end{lstlisting}
+    and execute with
+    \begin{lstlisting}
+    $
+    \end{lstlisting}
+    Experimental graph of CDF is as follow:
+    \begin{figure}[H]
+        \includegraphics[scale=0.6]{./figs/4.2}
+        \label{fig 4.2}
+    \end{figure}
+    \item Find the PDF of $T$.
+    \solution 
+    The following code plots \ref{fig 4.3}
+    \begin{lstlisting}
+    $    
+    \end{lstlisting}
+    and execute with
+    \begin{lstlisting}
+    $
+    \end{lstlisting}
+    Experimental graph of PDF is as follow:
+    \begin{figure}[H]
+        \includegraphics[scale=0.6]{./figs/4.3}
+        \label{fig 4.3}
+    \end{figure}
+    \item Find the theoretical expressions for the PDF and CDF of T.
+    \solution we have
+    \begin{equation}
+        T=U_1+U_2
+    \end{equation}
+    we know,
+    \begin{align}
+        p_U(x) = \begin{cases}
+        1 & x \in (0,1) \\
+        0 & otherwise
+    \end{cases} 
+    \end{align}
+    By convolution, we have
+    \begin{align}
+        p_T(x)&=p_U(u)*p_U(u) \\
+        &=\int_{-\infty}^{\infty} p_U(\tau)p_U(x-\tau)d\tau \\
+    \end{align}
+    Since $p_U(\tau)$ is 0 when $x < -\infty$ and $x>1$ \\
+    Therefore,
+    \begin{align}
+        \int_{-\infty}^{\infty} p_U(\tau)p_U(x-\tau)d\tau &= \int_{0}^{1} p_U(\tau)p_U(x-\tau)d\tau \\
+        &=\int_{0}^{1}p_U(x-\tau)d\tau
+    \end{align}
+    Now When $0<x<1$ \\
+    \begin{align}
+        \int_{0}^{1} p_U(x-\tau)d\tau &= \int_{0}^{x}p_U(x-\tau)d\tau \\
+        &= \int_{0}^{x}1d\tau \\
+        &= x
+    \end{align}
+    Now, When $1<x<2$ \\
+    \begin{align}
+        \int_{0}^{1} p_U(x-\tau)d\tau &= \int_{1-x}^{1}p_U(x-\tau)d\tau \\
+        &= \int_{1-x}^{1}1d\tau \\
+        &= 2-x
+    \end{align}
+    Therefore,
+    \begin{align}
+        p_T(x)=\begin{cases}
+            x & x \in (0,1] \\
+            2-x & x \in (1,2)
+        \end{cases}
+    \end{align}
+    
+
+    \item Verify your results through a plot. 
+    \solution 
+    The following code plots \ref{fig 4.5}
+    \begin{lstlisting}
+    $    
+    \end{lstlisting}
+    and execute with
+    \begin{lstlisting}
+    $
+    \end{lstlisting}
+
+    The follwing code plots \ref{fig 4.5}
+    \begin{lstlisting}
+    $    
+    \end{lstlisting}
+    and execute with
+    \begin{lstlisting}
+    $
+    \end{lstlisting}
+    Graph of CDF is as follow:
+    \begin{figure}[H]
+        \includegraphics[scale=0.6]{./figs/4.5}
+        \label{fig 4.5}
+    \end{figure}
+    Graph of PDF is as follow:
+    \begin{figure}[H]
+        \includegraphics[scale=0.6]{./figs/4.6}
+        \label{fig 4.6}
+    \end{figure}
+\end{enumerate}
 \end{document}
