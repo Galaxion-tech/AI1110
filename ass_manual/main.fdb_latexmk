@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1657204674 "/home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex" "main.pdf" "main" 1657204674
-  "/home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex" 1657204673 17325 8191f0a2e5b12b7addb88cd50517a4c5 ""
+["pdflatex"] 1657250869 "/home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex" "main.pdf" "main" 1657250870
+  "/home/galaxion/Desktop/sem2/probability/AI1110/ass_manual/main.tex" 1657250868 17995 e677e93e3d3c5c09333d3fe9552310b6 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1650183167 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1650183167 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -210,10 +210,10 @@
   "figs/gauss_pdf.pdf" 1657023485 15117 8fe4a779e82fa5808cbbbc5a941c28f2 ""
   "figs/other_cdf.pdf" 1656766391 14451 dedacfc1210a626eff513edff482f0c2 ""
   "figs/uni_cdf.pdf" 1656766523 14378 9191183f90c6d47eaedb40a5d87b9221 ""
-  "main.aux" 1657204674 2251 aed665636d7b14d119764febf1eeb505 "pdflatex"
-  "main.out" 1657204674 639 49f88c2c091165f3cec345805b07269e "pdflatex"
-  "main.tex" 1657204673 17325 8191f0a2e5b12b7addb88cd50517a4c5 ""
-  "main.toc" 1657204674 312 e026ec105795107d0353f0738a09f733 "pdflatex"
+  "main.aux" 1657250870 2768 668e4fa5092e28fcc6c940faa2c64ecc "pdflatex"
+  "main.out" 1657250870 639 49f88c2c091165f3cec345805b07269e "pdflatex"
+  "main.tex" 1657250868 17995 e677e93e3d3c5c09333d3fe9552310b6 ""
+  "main.toc" 1657250870 312 e026ec105795107d0353f0738a09f733 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -127,14 +127,14 @@ Let $U$ be a uniform  random variable between 0 and 1
 \solution Download the file:
 
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob1.1/exrand.c
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob1.1/coeffs.h
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/1.1.c
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/header/coeffs.h
 \end{lstlisting}
 
 and compile and execute the C program using
 
 \begin{lstlisting}
-$ gcc exrand.c -lm -Wall -g
+$ gcc 1.1.c -lm -Wall -g
 $ ./a.out
 \end{lstlisting}
 
@@ -147,13 +147,13 @@ $ ./a.out
 \solution  The following code plots Fig. \ref{fig:uni_cdf}
 
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob1.2/cdf_plot.py
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/1.2.py
 \end{lstlisting}
 
 It is executed with
 
 \begin{lstlisting}
-$ python3 cdf_plot.py
+$ python3 1.2.py
 \end{lstlisting}
 
 \begin{equation}
@@ -209,11 +209,11 @@ $ python3 cdf_plot.py
 \solution download C program
 
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob1.4/mycode1.c
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/1.4.c
         \end{lstlisting}
         and compiled and executed with
         \begin{lstlisting}
-$ gcc mycode1.c -lm -Wall -g
+$ gcc 1.4.c -lm -Wall -g
 $ ./a.out
         \end{lstlisting}
     \begin{align}
@@ -264,14 +264,14 @@ $ ./a.out
     \solution Download the file
 
     \begin{lstlisting}    
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob2.1/mycode2.c
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/2.1.c
     \end{lstlisting}
 
     Use coeffs.h from the prob1.1\\
     And run the code as:
 
     \begin{lstlisting}
-$ gcc mycode2.c -lm -Wall -g
+$ gcc 2.1.c -lm -Wall -g
 $ ./a.out
 \end{lstlisting}
 
@@ -291,13 +291,13 @@ $ ./a.out
     The required python file can be downloaded using
 
     \begin{lstlisting}
- $ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob2.2/mycode3.py
+ $ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/2.2.py
 \end{lstlisting}
 
 and executed using
 
 \begin{lstlisting}
-$ python3 mycode3.py
+$ python3 2.2.py
 \end{lstlisting}
 
 Graph is as follow:
@@ -325,13 +325,13 @@ Graph is as follow:
     The required python file can be downloaded using
 
     \begin{lstlisting}
- $ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob2.3/pdf_plot.py
+ $ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/2.3.py
 \end{lstlisting}
 
 and executed using
 
 \begin{lstlisting}
-$ python3 pdf_plot.py
+$ python3 2.3.py
 \end{lstlisting}
 
 Graph is as follow:
@@ -355,13 +355,13 @@ Graph is as follow:
 \noindent The C program can be downloaded using
 
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob2.4/mycode4.c
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/2.4.c
 \end{lstlisting}
 
 and compiled and executed with the following commands
 
 \begin{lstlisting}
-$ gcc mycode4.c -lm -Wall -g
+$ gcc 2.4.c -lm -Wall -g
 $ ./a.out
 \end{lstlisting} 
 
@@ -410,22 +410,23 @@ and plot its CDF.\\
 Download the C code to create the distribution.
 
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob3.1/mycode6.c
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/header/coeffs.h
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/3.1.c
 \end{lstlisting}
 and can be executed with
 \begin{lstlisting}
-$ gcc mycode6.c -lm -Wall -g
+$ gcc 3.1.c -lm -Wall -g
 $ ./a.out
 \end{lstlisting}
 
 The relevant python code is at
 
 \begin{lstlisting}
- $ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/prob3.1/mycode5.py
+ $ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/3.1.py
 \end{lstlisting}
 and can be executed with
 \begin{lstlisting}
-$ python3 mycode5.py
+$ python3 3.1.py
 \end{lstlisting}
 
 CDF Graph is as follow 
@@ -466,46 +467,48 @@ CDF Graph is as follow
     \end{align} 
     \solution Download the files:
     \begin{lstlisting}
-        $ wget
-        $ wget
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/4.1.c
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/header/coeffs.h
     \end{lstlisting}
     and compile and execute the C program using
     \begin{lstlisting}
-        $ gcc 4.1.c -lm -Wall -g
-        $ ./a.out
+$ gcc 4.1.c -lm -Wall -g
+$ ./a.out
     \end{lstlisting}
     
-    \item Find the CDF of $T$.
+    \item Find the CDF of $T$.\\
     \solution 
     The following code plots \ref{fig 4.2}
     \begin{lstlisting}
-    $    
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/4.2.py
     \end{lstlisting}
     and execute with
     \begin{lstlisting}
-    $
+$ python3 4.2.py
     \end{lstlisting}
     Experimental graph of CDF is as follow:
     \begin{figure}[H]
         \includegraphics[scale=0.6]{./figs/4.2}
         \label{fig 4.2}
+        \caption{Experimental CDF of T}
     \end{figure}
-    \item Find the PDF of $T$.
+    \item Find the PDF of $T$.\\
     \solution 
     The following code plots \ref{fig 4.3}
     \begin{lstlisting}
-    $    
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/4.3.py    
     \end{lstlisting}
     and execute with
     \begin{lstlisting}
-    $
+$ python3 4.3.py 
     \end{lstlisting}
     Experimental graph of PDF is as follow:
     \begin{figure}[H]
         \includegraphics[scale=0.6]{./figs/4.3}
         \label{fig 4.3}
+        \caption{Experimental PDF of T}
     \end{figure}
-    \item Find the theoretical expressions for the PDF and CDF of T.
+    \item Find the theoretical expressions for the PDF and CDF of T.\\
     \solution we have
     \begin{equation}
         T=U_1+U_2
@@ -549,34 +552,36 @@ CDF Graph is as follow
     \end{align}
     
 
-    \item Verify your results through a plot. 
+    \item Verify your results through a plot. \\
     \solution 
     The following code plots \ref{fig 4.5}
     \begin{lstlisting}
-    $    
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/4.5.py
     \end{lstlisting}
     and execute with
     \begin{lstlisting}
-    $
+$ python3 4.5.py
     \end{lstlisting}
 
-    The follwing code plots \ref{fig 4.5}
+    The follwing code plots \ref{fig 4.6}
     \begin{lstlisting}
-    $    
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/4.6.py 
     \end{lstlisting}
     and execute with
     \begin{lstlisting}
-    $
+$ python3 4.6.py
     \end{lstlisting}
     Graph of CDF is as follow:
     \begin{figure}[H]
         \includegraphics[scale=0.6]{./figs/4.5}
+        \caption{CDF of T}
         \label{fig 4.5}
     \end{figure}
     Graph of PDF is as follow:
     \begin{figure}[H]
         \includegraphics[scale=0.6]{./figs/4.6}
         \label{fig 4.6}
+        \caption{PDF of T}
     \end{figure}
 \end{enumerate}
 \end{document}
