@@ -10,24 +10,28 @@ import shlex
 
 
 
-x = np.linspace(-4,4,30)#points on the x axis
+x = np.linspace(-4,4,100)#points on the x axis
 simlen = int(1e6) #number of samples
 err = [] #declaring probability list
 #randvar = np.random.normal(0,1,simlen)
 randvar = np.loadtxt('../data/uni.dat',dtype='double')
 #randvar = np.loadtxt('gau.dat',dtype='double')
-for i in range(0,30):
+for i in range(0,100):
 	err_ind = np.nonzero(randvar < x[i]) #checking probability condition
 	err_n = np.size(err_ind) #computing the probability
 	err.append(err_n/simlen) #storing the probability values in a list
 
 def cdf(x):
-	return x
+	if (x < 0):
+		return 0.0
+	elif (x < 1):
+		return x
+	else :
+		return 1.0
 
-y=np.linspace(0,1,10)
 cdf_plot=scipy.vectorize(cdf)
-plt.plot(y.T,cdf_plot(y),'o',label="theory")
-plt.plot(x.T,err,label="numerical")#plotting the CDF
+plt.plot(x.T,cdf_plot(x),label="theory")
+plt.plot(x.T,err,'o',label="numerical")#plotting the CDF
 plt.grid() #creating the grid
 plt.xlabel('$x$')
 plt.ylabel('$F_U(x)$')

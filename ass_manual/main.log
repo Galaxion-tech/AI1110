@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.27)  8 JUL 2022 08:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.27)  8 JUL 2022 20:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -820,7 +820,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
-<./figs/uni_cdf.pdf, id=28, 462.52798pt x 346.89601pt>
+<./figs/uni_cdf.pdf, id=43, 462.52798pt x 346.89601pt>
 File: ./figs/uni_cdf.pdf Graphic file (type pdf)
 <use ./figs/uni_cdf.pdf>
 Package pdftex.def Info: ./figs/uni_cdf.pdf  used on input line 167.
@@ -835,11 +835,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
-
- []
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -847,8 +842,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--208
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.208 
-       <./figs/uni_cdf.pdf>]
+l.204     \end{align}
+                      <./figs/uni_cdf.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
@@ -858,7 +858,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
-<./figs/gau_cdf.pdf, id=102, 462.52798pt x 346.89601pt>
+<./figs/gau_cdf.pdf, id=116, 462.52798pt x 346.89601pt>
 File: ./figs/gau_cdf.pdf Graphic file (type pdf)
 <use ./figs/gau_cdf.pdf>
 Package pdftex.def Info: ./figs/gau_cdf.pdf  used on input line 305.
@@ -873,7 +873,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 321--323
 
  []
 
-<./figs/gauss_pdf.pdf, id=142, 462.52798pt x 346.89601pt>
+<./figs/gauss_pdf.pdf, id=157, 462.52798pt x 346.89601pt>
 File: ./figs/gauss_pdf.pdf Graphic file (type pdf)
 <use ./figs/gauss_pdf.pdf>
 Package pdftex.def Info: ./figs/gauss_pdf.pdf  used on input line 339.
@@ -902,13 +902,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.8.1}) h
                                                   \__shipout_drop_firstpage_...
 l.386      \end{align}
                        <./figs/gau_cdf.pdf> <./figs/gauss_pdf.pdf>]
-<./figs/other_cdf.pdf, id=242, 462.52798pt x 346.89601pt>
+<./figs/other_cdf.pdf, id=257, 462.52798pt x 346.89601pt>
 File: ./figs/other_cdf.pdf Graphic file (type pdf)
 <use ./figs/other_cdf.pdf>
-Package pdftex.def Info: ./figs/other_cdf.pdf  used on input line 434.
+Package pdftex.def Info: ./figs/other_cdf.pdf  used on input line 438.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 434--435
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 438--439
 [][]
  []
 
@@ -916,101 +916,254 @@ Overfull \hbox (25.51892pt too wide) in paragraph at lines 434--435
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.472     \end{lstlisting}
-                           <./figs/other_cdf.pdf>]
-<./figs/4.2.pdf, id=320, 462.52798pt x 346.89601pt>
+l.471     \end{align}
+                      <./figs/other_cdf.pdf>]
+<./figs/4.2.pdf, id=336, 462.52798pt x 346.89601pt>
 File: ./figs/4.2.pdf Graphic file (type pdf)
 <use ./figs/4.2.pdf>
-Package pdftex.def Info: ./figs/4.2.pdf  used on input line 491.
+Package pdftex.def Info: ./figs/4.2.pdf  used on input line 495.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 491--493
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 495--497
 [][]
  []
 
-<./figs/4.3.pdf, id=322, 462.52798pt x 346.89601pt>
+<./figs/4.3.pdf, id=338, 462.52798pt x 346.89601pt>
 File: ./figs/4.3.pdf Graphic file (type pdf)
 <use ./figs/4.3.pdf>
-Package pdftex.def Info: ./figs/4.3.pdf  used on input line 507.
+Package pdftex.def Info: ./figs/4.3.pdf  used on input line 511.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 507--509
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 511--513
 [][]
  []
 
 
-Overfull \hbox (12.94388pt too wide) detected at line 533
+Overfull \hbox (12.94388pt too wide) detected at line 537
 []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 533--535
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 539--541
-
  []
 
 [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.541     \begin{align}
-                       
+l.537     \end{align}
+                     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.541     \begin{align}
-                        <./figs/4.2.pdf> <./figs/4.3.pdf>]
-<./figs/4.5.pdf, id=422, 462.52798pt x 346.89601pt>
+l.537     \end{align}
+                      <./figs/4.2.pdf> <./figs/4.3.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 537--539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
+
+ []
+
+<./figs/4.5.pdf, id=437, 462.52798pt x 346.89601pt>
 File: ./figs/4.5.pdf Graphic file (type pdf)
 <use ./figs/4.5.pdf>
-Package pdftex.def Info: ./figs/4.5.pdf  used on input line 576.
+Package pdftex.def Info: ./figs/4.5.pdf  used on input line 592.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 576--577
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 592--593
 [][]
  []
 
-<./figs/4.6.pdf, id=423, 462.52798pt x 346.89601pt>
+<./figs/4.6.pdf, id=438, 462.52798pt x 346.89601pt>
 File: ./figs/4.6.pdf Graphic file (type pdf)
 <use ./figs/4.6.pdf>
-Package pdftex.def Info: ./figs/4.6.pdf  used on input line 582.
+Package pdftex.def Info: ./figs/4.6.pdf  used on input line 598.
 (pdftex.def)             Requested size: 277.51892pt x 208.1392pt.
 
-Overfull \hbox (25.51892pt too wide) in paragraph at lines 582--584
+Overfull \hbox (25.51892pt too wide) in paragraph at lines 598--600
 [][]
  []
 
-[6
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.587 \end{document}
-                    
+l.602 \end{enumerate}
+                      <./figs/4.5.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 610--612
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--626
+
+ []
+
+<./figs/5.3.png, id=501, 462.528pt x 346.896pt>
+File: ./figs/5.3.png Graphic file (type png)
+<use ./figs/5.3.png>
+Package pdftex.def Info: ./figs/5.3.png  used on input line 645.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Overfull \hbox (25.51894pt too wide) in paragraph at lines 645--647
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--651
+
+ []
+
+[7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.587 \end{document}
-                     <./figs/4.5.pdf> <./figs/4.6.pdf>] (./main.aux)
+l.680 \end{lstlisting}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.20.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.680 \end{lstlisting}
+                       <./figs/4.6.pdf> <./figs/5.3.png>]
+Overfull \hbox (22.96971pt too wide) detected at line 699
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 705--707
+
+ []
+
+<./figs/5.7.png, id=577, 462.528pt x 346.896pt>
+File: ./figs/5.7.png Graphic file (type png)
+<use ./figs/5.7.png>
+Package pdftex.def Info: ./figs/5.7.png  used on input line 720.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Overfull \hbox (25.51894pt too wide) in paragraph at lines 720--722
+[][]
+ []
+
+[8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.24.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.763 \end{align}
+                  <./figs/5.7.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 779--781
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--810
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--824
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 853--856
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--873
+
+ []
+
+<./figs/6.1_cdf.png, id=665, 462.528pt x 346.896pt>
+File: ./figs/6.1_cdf.png Graphic file (type png)
+<use ./figs/6.1_cdf.png>
+Package pdftex.def Info: ./figs/6.1_cdf.png  used on input line 894.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Overfull \hbox (25.51894pt too wide) in paragraph at lines 894--896
+[][]
+ []
+
+<./figs/6.1_pdf.png, id=666, 462.528pt x 346.896pt>
+File: ./figs/6.1_pdf.png Graphic file (type png)
+<use ./figs/6.1_pdf.png>
+Package pdftex.def Info: ./figs/6.1_pdf.png  used on input line 899.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Overfull \hbox (25.51894pt too wide) in paragraph at lines 899--901
+[][]
+ []
+
+[10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.28.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.906 \end{align}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.28.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.906 \end{align}
+                  <./figs/6.1_cdf.png> <./figs/6.1_pdf.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 931--933
+
+ []
+
+[11]
+<./figs/6.3_cdf.png, id=742, 462.528pt x 346.896pt>
+File: ./figs/6.3_cdf.png Graphic file (type png)
+<use ./figs/6.3_cdf.png>
+Package pdftex.def Info: ./figs/6.3_cdf.png  used on input line 1020.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Overfull \hbox (25.51894pt too wide) in paragraph at lines 1020--1022
+[][]
+ []
+
+<./figs/6.3_pdf.png, id=743, 462.528pt x 346.896pt>
+File: ./figs/6.3_pdf.png Graphic file (type png)
+<use ./figs/6.3_pdf.png>
+Package pdftex.def Info: ./figs/6.3_pdf.png  used on input line 1025.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+Overfull \hbox (25.51894pt too wide) in paragraph at lines 1025--1027
+[][]
+ []
+
+
+Underfull \vbox (badness 1472) has occurred while \output is active []
+
+ [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.30.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1068 \end{align}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{figure.30.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1068 \end{align}
+                   <./figs/6.3_cdf.png> <./figs/6.3_pdf.png>] [13
+
+] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 49F88C2C091165F3CEC345805B07269E;639.
+(rerunfilecheck)             Checksum: 1130E133B9729E104CADAD16D03EFEAB;1070.
  ) 
 Here is how much of TeX's memory you used:
- 25344 strings out of 478238
- 458464 string characters out of 5850456
- 837526 words of memory out of 5000000
- 42967 multiletter control sequences out of 15000+600000
+ 25621 strings out of 478238
+ 462220 string characters out of 5850456
+ 837512 words of memory out of 5000000
+ 43025 multiletter control sequences out of 15000+600000
  504171 words of font info for 100 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 84i,15n,90p,481b,1408s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,15n,90p,481b,1944s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (6 pages, 233325 bytes).
+Output written on main.pdf (13 pages, 380503 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 158 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 929 PDF objects out of 1000 (max. 8388607)
+ 644 compressed objects within 7 object streams
+ 370 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

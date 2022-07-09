@@ -43,7 +43,7 @@ plt.ylabel('$F_U(x)$')
 plt.legend(loc="best")
 #if using termux
 plt.savefig('../figs/4.5.pdf')
-plt.savefig('../figs/4..eps')
+plt.savefig('../figs/4.5.eps')
 plt.show()
 #subprocess.run(shlex.split("termux-open ./figs/uni_cdf.pdf"))
 #if using termux

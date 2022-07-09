@@ -389,6 +389,10 @@ On running, we get
         \text{Var}[X]&=E[X^2]-(E[X])^2 \\
         &=\int_{-\infty}^{\infty}x^2P_x(x)dx \\
         &=\int_{-\infty}^{\infty}x^2\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx \\
+        &=x\int_{-\infty}^{\infty}x\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx \\ &- \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx \\
+        &=\left. x.[-\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}]\right|_{x=-\infty}^{x=\infty} \\
+        &+ \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx \\
+        &=0+\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx\\
         &=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}dx\\
         &=\int_{-\infty}^{\infty}P_X(x)dx\\
         &=1
@@ -550,7 +554,19 @@ $ python3 4.3.py
             2-x & x \in (1,2)
         \end{cases}
     \end{align}
-    
+    we know,
+    \begin{equation}
+        F_T(x) = \int_{-\infty}^{x}P_T(t)dt
+       \end{equation}
+    Therefore,
+    \begin{align}
+        F_T(x)=\begin{cases}
+            0 & x \in (-\infty,0) \\
+            x^2/2 & x \in (0,1] \\
+            -x^2/2+2x-1 & x \in (1,2) \\
+            1 & x \in [2,\infty)
+        \end{cases}
+    \end{align}
 
     \item Verify your results through a plot. \\
     \solution 
@@ -583,5 +599,483 @@ $ python3 4.6.py
         \label{fig 4.6}
         \caption{PDF of T}
     \end{figure}
+\end{enumerate}
+
+\section{Maximum Likelihood}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+
+\item Generate equiprobable $X \in {-1,1}$. \\
+\solution Download the file\\
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.1.c
+\end{lstlisting}
+Use the coeffs.h downloaded in problem 1.1\\
+Execute the code as follow:
+\begin{lstlisting}
+$ gcc ./5.1.c -Wall -g -lm
+$ ./a.out
+\end{lstlisting}
+\item Generate \begin{align}
+    Y=AX+N
+\end{align}
+where $A=5$ dB, and $N \sim N(0,1)$.\\
+\solution Download the file\\
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.2.c
+\end{lstlisting}
+Use the coeffs.h downloaded in problem 1.1\\
+Execute the code as follow:
+\begin{lstlisting}
+$ gcc ./5.2.c -Wall -g -lm
+$ ./a.out
+\end{lstlisting}
+\item Plot $Y$ using a scatter plot.\\
+\solution Download the Python code
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.3.py
+\end{lstlisting}
+\begin{lstlisting}
+$ python3 ./5.3.py
+\end{lstlisting}
+Noise Produced as follow:
+\begin{figure}[H]
+    \includegraphics[scale=0.6]{./figs/5.3.png}
+    \label{fig 5.3}
+    \caption{Noise of Y}
+\end{figure}
+\item Guess how to estimate $X$ from $Y$\\
+\solution we have\\
+\begin{align}
+    Y=AX+N
+\end{align}
+Estimating X from Y as follows:
+\begin{align}
+   \hat{X} = sgn(Y) 
+\end{align}
+where $sgn(y)$ is defined as 
+\begin{align}
+    sgn(y)=\begin{cases}
+        -1 & y \in (-\infty,0) \\
+        -1 & y \in [0,\infty)
+    \end{cases}
+\end{align}
+\item Find \begin{align}
+    P_{e|0} = Pr(\hat{X}=-1|X=1)
+\end{align}
+and
+\begin{align}
+    P_{e|1} = Pr(\hat{X}=1|X=-1)
+\end{align}
+\solution Download the code
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.5.c
+\end{lstlisting}
+Execute it
+\begin{lstlisting}
+$ gcc 5.5.c -lm -Wall -g
+$ ./a.out
+\end{lstlisting}
+Now Download the python code
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.5.py
+\end{lstlisting}
+Execute it
+\begin{lstlisting}
+$ python3 5.5.py
+\end{lstlisting}
+On executing, we get
+\begin{align}
+    P_{e|0} &=0.3100037999240015 \\
+    P_{e|1} &=0.3106582131642633
+\end{align}
+\item  Find $P_e$ assuming that $X$ has equiprobable symbols.\\
+\solution we get
+\begin{align}
+    P_e &=\frac{P_{e|0}+P_{e|1}}{2} \\
+    &=\frac{0.3106582131642633+0.3106582131642633}{2} \\ &= 0.31033100654413237
+\end{align}
+\item Verify by plotting the theoretical $P_e$ with respect to $A$ from 0 to 10 dB.\\
+\solution Download the file
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.7.c
+\end{lstlisting} 
+Use the coeffs.h downloaded in problem 1.1\\
+Now compile it\\
+\begin{lstlisting}
+$ gcc ./5.7.c -o 5.7 -lm -Wall -g
+\end{lstlisting}
+Now Download the Python code
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com//galaxion-tech/AI110/master/ass_manual/code/5.7.py
+\end{lstlisting}
+and Execute It
+\begin{lstlisting}
+$ python3 5.7.py
+\end{lstlisting}
+On executing, we have
+\begin{figure}[H]
+    \includegraphics[scale=0.6]{./figs/5.7.png}
+    \label{fig 5.7}
+    \caption{}
+\end{figure}
+Theoretical Explanation:\\
+For equiprobable $X$, we have
+\begin{align}
+    P_e = P_{e|0} = P_{e|1} \label{5.7.1}
+\end{align}
+Now,
+\begin{align}
+    P_e&=P_{e|0} \\
+    &=Pr(\hat{X}=-1|X=1) \\
+    &=Pr(sgn(Y)=-1|X=1) \\ 
+    &= Pr(Y<0|X=1)\\
+    &=Pr(AX+N<0|X=1) \\ 
+    &= Pr(A+N < 0)\\
+    &=Pr(N<-A) \\ 
+    &= 1-Pr(N<A) \\
+    &=1-F_N(A)\\
+    &=Q_N(A) \label{5.7.11}
+\end{align}
+Hence Shown 
+\item Now consider a threshold $\delta$ while estimating $X$ from $Y$. Find the value of $\delta$ that minimize the theoretical $P_e$.\\
+\solution Let estimation of X from Y have an threshold $\delta$
+\begin{align}
+    \hat{X}=\begin{cases}
+        1 & Y> \delta \\
+        -1 & Y < \delta
+    \end{cases}
+\end{align}
+Since we know,
+\begin{align}
+    P_{e|0} &= Pr(\hat{X}=-1|X=1)\\
+    &=Pr(Y<\delta | X=1)\\
+    &=Pr(A+N<\delta)\\
+    &=Pr(N<\delta-A)\\
+    &=F_N(\delta-A)\label{5.8.6}\\
+    P_{e|1} &= Pr(\hat{X}=1|X=-1)\\
+    &=Pr(Y>\delta | X=-1)\\
+    &=Pr(-A+N>\delta)\\
+    &=Pr(N>\delta+A)\\
+    &=Q_N(\delta+A) \label{5.8.11}
+\end{align}
+Therefore,
+\begin{align}
+    P_e &=\frac{P_{e|0}+P_{e|1}}{2}\\
+    &=\frac{F_N(\delta-A)+Q_N(\delta+A)}{2}
+\end{align}
+For minimizing, differnciating w.r.t $\delta$
+\begin{align}
+    \frac{d P_e}{d\delta} &= \frac{d}{d\delta}\left(\frac{F_N(\delta-A)+Q_N(\delta+A)}{2}\right)\\
+    &=\frac{P_N(\delta-A)-P_N(\delta+A)}{2}\\
+    &=\frac{1}{2\sqrt{2\pi}}\left[e^{\frac{-(\delta-A)^2}{2}}-e^{\frac{-(\delta+A)^2}{2}}\right]\\
+    &=0
+\end{align}
+Only Possible solution for $\delta $ are
+\begin{align}
+    \delta=0,\pm \infty
+\end{align}
+Since for minima \\
+\begin{align}
+    \frac{d^2P_e}{d\delta ^2} >0
+\end{align}
+On calculating double derivative
+\begin{align}
+    \frac{d^2P_e}{d\delta ^2} &= \frac{1}{2\sqrt{2\pi}}[(A-\delta)e^{\frac{-(\delta-A)^2}{2}}\\
+     &+(A+\delta)e^{\frac{-(\delta+A)^2}{2}}]
+\end{align}
+when $\delta =0$, we get
+\begin{align}
+    \frac{d^2P_e}{d\delta ^2} &= \frac{1}{2\sqrt{2\pi}}[(A)e^{\frac{-(A)^2}{2}}+(A)e^{\frac{-(A)^2}{2}}] \\
+    &>0
+\end{align}
+Hence $\delta=0$ is the threshold on which $P_e$ minimized.
+\item Repeat the above exercise when
+\begin{align} p_X(0) = p \end{align}
+\solution Now we have 
+\begin{align}
+    p_X(x) = \begin{cases}
+        p & x = 1 \\
+        1-p & x= -1
+    \end{cases}
+\end{align}
+Since from \eqref{5.7.1} and \eqref{5.7.11}
+we have
+\begin{align}
+    P_{e|0}=P_{e|1} = Q_N(A)
+\end{align}
+Therfore,\\
+\begin{align}
+    P_e &= (p)P_{e|0}+(1-p)P_{e|1} \\
+    &= (p)Q_N(A)+(1-p)Q_N(A)\\
+    &=(p+1-p)Q_N(A)\\
+    &=Q_N(A)
+\end{align}
+Hence $P_e$ is independent of $p$ when threshold $\delta=0$\\
+Now Consider a threshold $\delta$\\
+From \eqref{5.8.6} and \eqref{5.8.11}, we have
+\begin{align}
+    P_e &=(p)p_{e|0}+(1-p)p_{e|1}\\
+    &= (p)F_N(\delta-A)+(1-p)Q_N(\delta+A)
+\end{align}
+On differnciating, we have\\
+\begin{align}
+    \frac{dP_e}{d\delta} &= (p)P_N(\delta-A)-(1-p)P_N(\delta+A) \\
+    &=\frac{1}{\sqrt{2\pi}}\left[(p)e^{\frac{-(\delta-A)^2}{2}}-(1-p)e^{\frac{-(\delta+A)^2}{2}}\right] \\
+    &=0
+\end{align}
+On calculating
+\begin{align}
+   \left[(p)e^{\frac{-(\delta-A)^2}{2}}-(1-p)e^{\frac{-(\delta+A)^2}{2}}\right]&=0 \\
+   e^{\frac{(\delta+A)^2}{2}-\frac{(\delta-A)^2}{2}}&=\frac{1}{p} -1\\
+   e^{2\delta A} &= \frac{1}{p} -1
+\end{align}
+Since $e^x$ is monotonic.
+\begin{align}
+   \delta &= \frac{1}{2A}\ln (\frac{1}{p}-1)
+\end{align}
+On double differnciating $P_e$ at $\delta$ =$\frac{1}{2A}\ln (\frac{1}{p}-1)$ for minima, we get
+\begin{align}
+    \frac{d^2P_e}{d\delta ^2} &= \frac{1}{2\sqrt{2\pi}}[(p)(A-\delta)e^{\frac{-(\delta-A)^2}{2}}\\ 
+    &+(1-p)(A+\delta)e^{\frac{-(\delta+A)^2}{2}}] \\
+    & >0
+\end{align}
+Now,
+\begin{align}
+    p(A-\delta)e^{\frac{-(\delta-A)^2}{2}} &> -(1-p)(\delta +A)e^{\frac{-(\delta+A)^2}{2}}\\
+    p(A-\delta)e^{2\delta \pi} &> -(1-p)(A+\delta)\\
+    (A-\delta)(1-p) &> (p-1)(A+\delta)\\
+    A-Ap &> Ap-A\\
+    2A &> 2Ap \hspace*{12pt} \text{Since} A \neq 0 \\
+    p&<1
+\end{align}
+Hence Always true\\
+Therefore, $\delta$ = $\frac{1}{2A}\ln (\frac{1}{p}-1)$ is the threshold where $P_e$ minimized given $p_X(0)=1$\\
+
+\item Repeat the above exercise using the MAP criterion.\\
+\solution 
+\end{enumerate}
+
+
+\section{Gaussian To Other}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+
+\item Let $X_1 \sim N(0,1)$ and $X_2 \sim N(0,1)$. Plot the CDF and PDF of 
+\begin{align}
+    V=X_1^2+X_2^2
+\end{align}
+\solution Downlaod the C code to generate the distribution \\
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1!10/master/ass_manual/code/6.1.c
+\end{lstlisting}
+Use the coeffs.h downloaded in problem 1.1
+Now execute it to get distribution in v.dat file
+\begin{lstlisting}
+$ gcc 6.1.c -lm -Wall -g
+$ ./a.out
+\end{lstlisting}
+Now Download the python code 
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1!10/master/ass_manual/code/6.1_cdf.py
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1!10/master/ass_manual/code/6.1_pdf.py
+\end{lstlisting}
+execute them
+\begin{lstlisting}
+$ python3 6.1_cdf.py
+$ python3 6.1_pdf.py
+\end{lstlisting}
+
+\begin{figure}[H]
+    \includegraphics[scale = 0.6]{./figs/6.1_cdf.png}
+    \label{6.1.1}
+    \caption{CDF of V}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale = 0.6]{./figs/6.1_pdf.png}
+    \label{6.1.2}
+    \caption{PDF of V}
+\end{figure}
+Theoritical Explanation:
+\begin{align}
+    V=X_1^2+X_2^2
+\end{align}
+where $X_1$ and $X_2$ are i.i.d normal random variable \\
+Consider two random variable $R$ and $\Theta$ such that $X_1 = R \sin \Theta$ and $X_2 = R \cos \Theta$,\\
+Using transformation, we have
+\begin{align}
+    f_{R,\Theta}(r,\theta) = \|J\| f_{X_1,X_2}(x_1,x_2) \label{6.1.3}
+\end{align}
+where $J$ is Jacobian matrix
+\begin{align}
+    J &= \begin{pmatrix}
+        \frac{\delta x_1}{\delta r} & \frac{\delta x_1}{\delta \theta} \\
+        \frac{\delta x_2}{\delta r} & \frac{\delta x_2}{\delta \theta}
+    \end{pmatrix} \\
+    &=\begin{pmatrix}
+        \sin \theta & r \cos \theta \\
+        \cos \theta & -r \sin \theta 
+    \end{pmatrix}\\
+    &= -r(\cos^2 \theta + \sin^2 \theta) \\
+    \|J\|&= r
+\end{align}
+Now, since $X_1$ and $X_2$ are independent,
+\begin{align}
+    f_{X_1,X_2}(x_1,x_2) &= f_{X_1}(x_1).f_{X_2}(x_2) \\
+    &= \left(\frac{1}{\sqrt{2\pi}}e^{\frac{-x_1^2}{2}}\right) \left(\frac{1}{\sqrt{2\pi}}e^{\frac{-x_2^2}{2}}\right) \\
+    &= \left(\frac{1}{2\pi}e^{\frac{-(x_1^2+x_2^2)}{2}}\right)
+\end{align} 
+Now Since $X_1^2+X_2^2 = R^2$, using \eqref{6.1.3} we get\\
+\begin{align}
+    f_{R,\Theta}(r,\theta) = \frac{r}{2\pi} e^{\frac{-r^2}{2}} 
+\end{align}
+Now we know $R$ and $\Theta$ are independent, Therefore
+\begin{align}
+    f_R(r) &= \int_{0}^{2\pi} f_{R,\Theta}(r,\theta) d\theta \\
+    &= \int_{0}^{2\pi} \frac{r}{2\pi} e^{\frac{-r^2}{2}} d\theta \\
+    &= r e^{\frac{-r^2}{2}} \label{6.1.14}
+\end{align}
+Now Since $V=X_1^2+X_2^2 = R^2$ where $R \geq 0$, we have CDF of V as follow
+\begin{align}
+    F_V(v) &= Pr(V < v) \\
+    &= Pr(R^2 < v) \\
+    &=Pr(R < \sqrt{v}) \hspace*{12pt} \text{Since } R\geq 0\\
+    &=F_R(\sqrt{v}) \label{6.1.18}
+\end{align}
+where $v \geq 0$\\
+Since when $v< 0$,From \eqref{6.1.18} we have 
+\begin{align}F_V(v) = 0\end{align}
+Therefore,\begin{align}
+    f_V(v) = 0
+\end{align}
+when $v \geq 0$, \\
+On differnciating both side w.r.t $v$, we get,
+\begin{align}
+    F_V(v) &= F_R(\sqrt{v})\\
+    \frac{dF_V(v)}{dv} &= \frac{dF_R(\sqrt{v})}{dv} \\
+    f_V(v) &= f_R(\sqrt{v})\frac{1}{2\sqrt{v}} \\
+    &=\sqrt{v}e^{\frac{-v}{2}}\frac{1}{2\sqrt{v}}\\
+    &=\frac{1}{2}e^{\frac{-v}{2}}
+\end{align}
+
+Now, On Integrating $f_V(v)$ for $v \geq 0$, we get
+\begin{align}
+    F_V(v) &= \int_{-\infty}^{v} f_V(v) dv \\
+    &= \int_{-\infty}^{v} \frac{1}{2}e^{\frac{-v}{2}} dv \\
+    &= 1-e^{\frac{-v}{2}}
+\end{align}
+Hence we have
+\begin{align}
+    f_V(v) &= (\frac{1}{2}e^{\frac{-v}{2}})u(v)\\
+    F_V(v) &= (1-e^{\frac{-v}{2}})u(v) \label{6.1.30}
+\end{align}
+where $u(v)$ is a unit step function\\
+It is Chi-square Distribution.
+\item If 
+\begin{align}
+    F_V(x) = \begin{cases}
+        1-e^{-\alpha x} & x \geq 0\\
+        0 & x < 0
+    \end{cases} \label{6.2.1}
+\end{align}
+find $\alpha$.\\
+\solution Since From \eqref{6.1.30}, we have
+\begin{align}
+    F_V(x) = \begin{cases}
+        1-e^{\frac{-x}{2}} & x \geq 0 \\
+        0 & x <0
+    \end{cases} \label{6.2.2}
+\end{align}
+Since $e^{-x}$ is monotonic, On comparing \eqref{6.2.2} with \eqref{6.2.1}, we get
+\begin{align}
+    \alpha =\frac{1}{2}
+\end{align}
+\item Plot the CDF and PDF of \begin{align}
+    A=\sqrt{V}
+\end{align}
+\solution Download the C code to generate distribution A in aa.dat
+\begin{lstlisting}
+$ wget http://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/6.3.c
+\end{lstlisting}
+execute it to get distribution
+\begin{lstlisting}
+$ gcc 6.3.c -lm -Wall -g
+$ ./a.out
+\end{lstlisting}
+Now Downlaod the Python code 
+\begin{lstlisting}
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/6.3_cdf.py
+$ wget https://raw.githubusercontent.com/galaxion-tech/AI1110/master/ass_manual/code/6.3_pdf.py
+\end{lstlisting}
+Execute it 
+\begin{lstlisting}
+$ python3 6.3_cdf.py
+$ python3 6.3_pdf.py
+\end{lstlisting}
+\begin{figure}[H]
+    \includegraphics[scale = 0.6]{./figs/6.3_cdf.png}
+    \label{6.3_cdf}
+    \caption{CDF of A}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale = 0.6]{./figs/6.3_pdf.png}
+    \label{6.3_pdf}
+    \caption{PDF of A}
+\end{figure}
+Theoritical Explanation:\\
+Since we have $V=R^2$, Hence
+\begin{align}
+    A = \sqrt{V} = R
+\end{align}
+Therefore,From \eqref{6.1.14}, PDf of A is as follow
+\begin{align}
+    f_A(a) &= f_R(a) \\
+    &= ae^{\frac{-a^2}{2}} \label{6.3.4}
+\end{align}
+where $a \geq 0$\\
+For $a<0$, we have
+\begin{align}
+    f_A(a) &= 0\\
+    F_A(a) &= 0
+\end{align}
+On Integrating \eqref{6.3.4} for $a \geq 0$, we have 
+\begin{align}
+    F_A(a)&=\int_{-infty}^{a} f_A(x)dx \\
+    &=\int_{-\infty}^{a} ae^{\frac{-a^2}{2}}\\
+    &=\int_{-\infty}^{0} ae^{\frac{-a^2}{2}}+\int_{0}^{a} ae^{\frac{-a^2}{2}}\\
+    &=0+\int_{0}^a ae^{\frac{-a^2}{2}}\\
+    &=1-e^{\frac{-a^2}{2}}
+\end{align}
+Therefore, Finally we have
+\begin{align}
+    f_A(a) &= ae^{\frac{-a^2}{2}}u(a) \\
+    F_A(a) &= (1-e^{\frac{-a^2}{2}})u(a)
+\end{align}
+where $u(a)$ is unit step function\\
+It is Rayleigh Distribution
+\end{enumerate}
+\section{Conditional Probability}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item Plot \begin{align}
+    P_e = Pr(\hat{X} = -1 | X=1) \label{7.1}
+\end{align}
+for \begin{align}
+    Y=AX+N
+\end{align}
+where A is Raleigh with $E[A^2]=\gamma,N \sim N(0,1), X \in \{-1,1\}$ for $0 \leq \gamma \leq 10$ dB. 
+\item Assuming that N is a constant, find an expression for $P_e$. Call this $P_e(N)$
+\item For a function $g$,
+\begin{align}
+    E[g(X)] = \int_{-\infty}^{\infty} g(x)p_X(x) dx \label{7.3}
+\end{align}
+Find $P_e = E[P_e(N)]$.
+\item Plot $P_e$ in problem \eqref{7.1} and \eqref{7.3} on the same graph w.r.t $\gamma$. Comment.
 \end{enumerate}
 \end{document}

@@ -9,7 +9,7 @@ double **linalg_inv(double **mat, int m);
 double **matmul(double **a, double **b, int m, int n, int p);
 double **transpose(double **a,  int m, int n);
 void uniform(char *str, int len);
-int gaussian(char *str, int len,double sig2,unsigned short n);
+int gaussian(char *str, int len,double, double, double sig2,unsigned short n,double);
 double mean(char *str);
 //End function declaration
 
@@ -192,13 +192,13 @@ void triangular_distribution(char * str){
 
   FILE *fw = fopen(str,"w");
 
-  double temp;
+  double temp,u1,u2;
   int n=1000000;
   for (int i=0;i<n;i++){
     temp=0;
-    for (int j=0;j<2;j++){
-      temp+=(double) rand()/RAND_MAX;
-    }
+    u1=rand()/RAND_MAX;
+    u2=rand()/RAND_MAX;
+    temp=u1+u2;
     fprintf(fw,"%lf\n",temp);
   }
   fclose(fw);
@@ -244,7 +244,7 @@ return temp;
 //End function for calculating the mean of random numbers
 
 //Defining the function for generating Gaussian random numbers
-int gaussian(char *str, int len, double sig2,unsigned short n)
+int gaussian(char *str, int len,double invarU , double inmeanU, double sig2,unsigned short n,double div)
 {
 int i,j;
 double temp;
@@ -253,16 +253,16 @@ FILE *fp;
 srand(n);
 
 fp = fopen(str,"w");
-double invarU = 192.0, inmeanU = 32.0;
 int num = sig2*invarU;
 if (num==0){ return -1; }
 //Generate numbers
 for (i = 0; i < len; i++)
 {
-temp = 0;
+temp = 0.0;
 for (j = 0; j < num; j++)
 {
-temp += (double)(rand()/RAND_MAX) *0.1;
+  //double a = (double) rand()/  RAND_MAX;
+  temp += ((double) rand()/RAND_MAX)*div;
 }
 temp-=(double) num/inmeanU ;
 fprintf(fp,"%lf\n",temp);
@@ -271,12 +271,26 @@ fclose(fp);
 return 1;
 
 }
+void AA_distribution(char * str, char * chi){
+  FILE *fw=fopen(str,"w");
+  FILE* fr=fopen(chi,"r");
+  int n;
+  double temp;
+  n=1000000;
+  for (int i=0; i<n;i++){
+    fscanf(fr,"%lf",&temp);
+    temp=sqrt(temp);
+    fprintf(fw,"%lf\n",temp);
+  }
+  fclose(fw);
+  fclose(fr);
+}
 //End function for generating Gaussian random numbers
-void rayleigh(char * str, double y){
+void rayleigh(char * str,double y){
     FILE *fw=fopen(str,"w");
     int n=1000000;
-    int check = gaussian("../data/gau1.dat",n,y/2.0,3);
-    gaussian("../data/gau2.dat",n,y/2.0,2);
+    int check = gaussian("../data/gau1.dat",192,32,n,y/2.0,3,0.1);
+    gaussian("../data/gau2.dat",n,192,32,y/2.0,2,0.1);
     if (check == -1)
       return;
     FILE *f1=fopen("../data/gau1.dat","r");
@@ -353,7 +367,28 @@ void A_distribution(char * str, double a){
   FILE * fw= fopen(str,"w");
 
   for (int i=0;i<n;i++){
-    fprintf(fw,"%lf\n",a);
+    fprintf(fw,"%f\n",a);
   }
   fclose(fw);
+}
+double chi_square(double a, double b){
+  double temp = a*a+b*b;
+  return temp;
+}
+void chi_square_distribution(char *str, char * gau1, char * gau2){
+  FILE * fw= fopen(str,"w");
+  FILE *f1= fopen(gau1,"r");
+  FILE*f2 =fopen(gau2,"r");
+  int n;
+  double g1,g2,temp;
+  n = 1000000;
+  for (int i=0; i<n; i++){
+    fscanf(f1,"%lf",&g1);
+    fscanf(f2,"%lf",&g2);
+    temp = chi_square(g1,g2);
+    fprintf(fw,"%lf\n",temp);
+  }
+  fclose(fw);
+  fclose(f1);
+  fclose(f2);
 }

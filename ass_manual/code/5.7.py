@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy
 import os
+import mpmath
 #if using termux
 import subprocess
 import shlex
@@ -11,7 +12,6 @@ i=1
 def error():
     x_cap=np.loadtxt('../data/x_cap.dat',dtype='int')
     x=np.loadtxt('../data/x.dat',dtype='int')
-    A=np.loadtxt
     den=np.count_nonzero(x==1)
     num=np.count_nonzero((x_cap==-1) * (x==1))
     return num/den
@@ -24,11 +24,17 @@ def run(val):
     i+=1
     pe=error()
     return pe
-
+def Q(x):
+	return 0.5*mpmath.erfc(x/np.sqrt(2))
+Q_plot = np.vectorize(Q)
 vec_run=np.vectorize(run)
-plt.plot(y,vec_run(y),"o")
+plt.plot(y,Q_plot(y),label="theory")
+plt.plot(y,vec_run(y),"o",label="numerical")
+plt.ylabel("$P_e$")
+plt.xlabel("$A$")
+plt.legend(loc="best")
 plt.grid()
-plt.show()
+plt.savefig("../figs/5.7.png")
 #simlen = int(1e6) #number of samples
 #err = [] #declaring probability list
 #randvar = np.random.normal(0,1,simlen)
